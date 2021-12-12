@@ -47,28 +47,20 @@ const prettifySeconds = (seconds: number, resolution?: string) => {
 
 export default class SpaRebaseTimer extends Web3DiscordBot {
   public name: string = "SpaRebaseTimer";
-  init(): void {}
-  ready(): void {
-    this.client.user!.setActivity("Rebase Timer", {
-      type: "WATCHING",
-    });
+  async init() {}
+  async ready() {
+    this.setWatching("Rebase Timer");
   }
-  run(): void {
-    this.web3.eth.getBlockNumber((error, blockNumber) => {
-      if (error) {
-        console.error(error.message);
-        return;
-      }
-      console.log("Retrieved block number: " + blockNumber);
+  async run() {
+    const blockNumber = await this.web3.eth.getBlockNumber();
+    this.log(`Retrieved block number ${blockNumber}`);
 
-      const rebaseBlock = getRebaseBlock(blockNumber);
-      const seconds = secondsUntilBlock(blockNumber, rebaseBlock);
-      const prettified = prettifySeconds(seconds);
+    const rebaseBlock = getRebaseBlock(blockNumber);
+    const seconds = secondsUntilBlock(blockNumber, rebaseBlock);
+    const prettified = prettifySeconds(seconds);
 
-      const displayString =
-        prettified !== "" ? prettified : "Less than a minute";
+    const displayString = prettified !== "" ? prettified : "Less than a minute";
 
-      this.setNickName(displayString);
-    });
+    this.setNickName(displayString);
   }
 }

@@ -1,7 +1,10 @@
 {
   "providers": {
     "websocket": "wss://wsapi.fantom.network",
-    "rpc": "https://rpc.ftm.tools/"
+    "rpc": "https://rpc.ftm.tools/",
+    "thegraph": {
+      "spookyswap": "eerieeight/spookyswap"
+    }
   },
   "contracts": {
     "lambda": {
@@ -17,6 +20,10 @@
     },
     "lambdaWftmMarket": {
       "address": "0xf8cFD8a6375A5c8e69D697ea0E31cA4F2D5832Dd"
+    },
+    "sSPA": {
+      "address": "0x8e2549225E21B1Da105563D419d5689b80343E01",
+      "fromBlock": 20743258
     }
   }
 }

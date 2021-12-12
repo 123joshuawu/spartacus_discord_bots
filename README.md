@@ -19,3 +19,6 @@ Discord bots for [Spartacus](https://spartacus.finance/#/) and [Spartacadabra](h
 
 - **Avail Lambda wFTM**: Shows total amount of LAMBDA available to borrow using wFTM as collateral
   https://discord.com/api/oauth2/authorize?client_id=919422131027189790&permissions=0&scope=bot
+
+- **SPA Current Index**: Shows current SPA index
+  https://discord.com/api/oauth2/authorize?client_id=919717510700498995&permissions=0&scope=bot

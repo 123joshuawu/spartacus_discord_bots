@@ -7,6 +7,7 @@ import { snakeCaseToCamelCase } from "./util";
 import Web3DiscordBot, { fromToken } from "./Web3DiscordBot";
 import AvailLambdaWftm from "./AvailLambdaWftm";
 import SpaRebaseTimer from "./SpaRebaseTimer";
+import SpaCurrentIndex from "./SpaCurrentIndex";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ const bots: Record<
   AvailLambdaWsspa,
   AvailLambdaWftm,
   SpaRebaseTimer,
+  SpaCurrentIndex,
 };
 
 const tokenKeys = Object.keys(process.env).filter((key) =>
