@@ -1,0 +1,22 @@
+{
+  "providers": {
+    "websocket": "wss://wsapi.fantom.network",
+    "rpc": "https://rpc.ftm.tools/"
+  },
+  "contracts": {
+    "lambda": {
+      "address": "0x2126be94443334Fd71428dBa3c638fB722d1838e",
+      "fromBlock": 24052061
+    },
+    "bentoBox": {
+      "address": "0xF5BCE5077908a1b7370B9ae04AdC565EBd643966",
+      "fromBlock": 2918231
+    },
+    "lambdaWsspaMarket": {
+      "address": "0x878c92A99cc335310710C239BD9808A6F57d5Ea4"
+    },
+    "lambdaWftmMarket": {
+      "address": "0xf8cFD8a6375A5c8e69D697ea0E31cA4F2D5832Dd"
+    }
+  }
+}
