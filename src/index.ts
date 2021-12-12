@@ -12,17 +12,14 @@ dotenv.config();
 
 const web3 = new Web3(new Web3.providers.HttpProvider(config.providers.rpc));
 
-const globalRunIntervalMs =
-  process.env.RUN_INTERVAL_MS !== undefined
-    ? parseInt(process.env.RUN_INTERVAL_MS)
-    : 60 * 1000;
+const globalRunCron = process.env.RUN_CRON ?? "*/1 * * * *";
 
 const bots: Record<
   string,
   new (
     web3: Web3,
     token: string,
-    runIntervalMs: number,
+    runCron: string,
     client: Client
   ) => Web3DiscordBot
 > = {
@@ -73,11 +70,8 @@ tokenKeys.forEach((tokenKey) => {
       ])
   );
 
-  const runIntervalMs =
-    params.run_interval_ms !== undefined
-      ? parseFloat(params.run_interval_ms)
-      : globalRunIntervalMs;
+  const runCron = params.run_cron ?? globalRunCron;
 
-  fromToken(bots[botKey], web3, params.token!, runIntervalMs);
+  fromToken(bots[botKey], web3, params.token!, runCron);
 });
 console.log("All bots started");
