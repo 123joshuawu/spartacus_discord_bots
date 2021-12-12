@@ -46,6 +46,7 @@ const prettifySeconds = (seconds: number, resolution?: string) => {
 };
 
 export default class SpaRebaseTimer extends Web3DiscordBot {
+  public name: string = "SpaRebaseTimer";
   init(): void {}
   ready(): void {
     this.client.user!.setActivity("Rebase Timer", {
@@ -58,6 +59,7 @@ export default class SpaRebaseTimer extends Web3DiscordBot {
         console.error(error.message);
         return;
       }
+      console.log("Retrieved block number: " + blockNumber);
 
       const rebaseBlock = getRebaseBlock(blockNumber);
       const seconds = secondsUntilBlock(blockNumber, rebaseBlock);

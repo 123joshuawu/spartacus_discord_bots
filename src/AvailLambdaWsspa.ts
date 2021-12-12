@@ -2,6 +2,8 @@ import AvailLambda from "./AvailLambda";
 import config from "./config.json";
 
 export default class AvailLambdaWsspa extends AvailLambda {
+  public name: string = "AvailLambdaWsspa";
   protected collateralAssetName: string = "wsSPA";
-  collateralAssetAddress = config.contracts.lambdaWsspaMarket.address;
+  protected collateralAssetAddress: string =
+    config.contracts.lambdaWsspaMarket.address;
 }

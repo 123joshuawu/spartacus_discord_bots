@@ -20,8 +20,10 @@ export const fromToken = async <T extends Web3DiscordBot>(
   const bot = new Bot(web3, token, runIntervalMs, client);
 
   bot.init();
+  console.log("Bot initialized");
 
   client.once("ready", () => {
+    console.log("Bot ready");
     bot.ready();
 
     bot.run();
@@ -35,6 +37,8 @@ export const fromToken = async <T extends Web3DiscordBot>(
 };
 
 export default abstract class Web3DiscordBot {
+  public abstract readonly name: string;
+
   constructor(
     protected readonly web3: Web3,
     protected readonly token: string,
@@ -49,6 +53,7 @@ export default abstract class Web3DiscordBot {
   setNickName(nickname: string) {
     this.client.guilds.cache.forEach((guild) => {
       if (!guild.me) {
+        console.error(`No guild me: ${guild.name}`);
         return;
       }
 

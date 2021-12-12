@@ -24,7 +24,12 @@ export default abstract class AvailLambda extends Web3DiscordBot {
   }
 
   ready() {
-    this.client.user!.setActivity(`Borrow - ${this.collateralAssetName}`, {
+    if (!this.client.user) {
+      console.error("Discord client user unset");
+      return;
+    }
+
+    this.client.user.setActivity(`Borrow - ${this.collateralAssetName}`, {
       type: "WATCHING",
     });
   }
@@ -35,7 +40,7 @@ export default abstract class AvailLambda extends Web3DiscordBot {
       .call()
       .then((availableLambdaString) => {
         const availableLambda = parseFloat(availableLambdaString) / 10 ** 18;
-
+        console.log(`${this.name} lambda balance: ${availableLambda}`);
         const displayString =
           availableLambda < 5 ? "0" : this.formatter.format(availableLambda);
 
