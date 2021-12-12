@@ -1,7 +1,7 @@
 import config from "./config.json";
 import Web3DiscordBot from "./Web3DiscordBot";
 import { BentoBox } from "../types/web3-v1-contracts/bentoBox";
-const BentoBoxAbi = require("../abi/bentoBox.json");
+import BentoBoxAbi from "../abi/bentoBox.json";
 
 export default abstract class AvailLambda extends Web3DiscordBot {
   protected bentoBox!: BentoBox;
@@ -18,7 +18,7 @@ export default abstract class AvailLambda extends Web3DiscordBot {
 
   init() {
     this.bentoBox = new this.web3.eth.Contract(
-      BentoBoxAbi,
+      BentoBoxAbi as any,
       config.contracts.bentoBox.address
     ) as any as BentoBox;
   }
