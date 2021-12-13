@@ -3,7 +3,8 @@
     "websocket": "wss://wsapi.fantom.network",
     "rpc": "https://rpc.ftm.tools/",
     "thegraph": {
-      "spookyswap": "eerieeight/spookyswap"
+      "spookyswap": "eerieeight/spookyswap",
+      "dexcandles": "eerieeight/dexcandles"
     }
   },
   "contracts": {
@@ -24,6 +25,15 @@
     "sSPA": {
       "address": "0x8e2549225E21B1Da105563D419d5689b80343E01",
       "fromBlock": 20743258
+    },
+    "SPA": {
+      "address": "0x5602df4a94eb6c680190accfa2a475621e0ddbdc"
+    },
+    "DAI": {
+      "address": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e"
+    },
+    "spaDaiLp": {
+      "address": "0xfa5a5f0bc990be1d095c5385fff6516f6e03c0a7"
     }
   }
 }

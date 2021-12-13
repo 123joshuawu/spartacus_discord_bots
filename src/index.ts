@@ -8,6 +8,7 @@ import Web3DiscordBot, { fromToken } from "./Web3DiscordBot";
 import AvailLambdaWftm from "./AvailLambdaWftm";
 import SpaRebaseTimer from "./SpaRebaseTimer";
 import SpaCurrentIndex from "./SpaCurrentIndex";
+import SpaPrice from "./SpaPrice";
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ const bots: Record<
   AvailLambdaWftm,
   SpaRebaseTimer,
   SpaCurrentIndex,
+  SpaPrice,
 };
 
 const tokenKeys = Object.keys(process.env).filter((key) =>
