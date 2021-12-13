@@ -9,6 +9,7 @@ import AvailLambdaWftm from "./AvailLambdaWftm";
 import SpaRebaseTimer from "./SpaRebaseTimer";
 import SpaCurrentIndex from "./SpaCurrentIndex";
 import SpaPrice from "./SpaPrice";
+import WsspaPrice from "./WsspaPrice";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ const bots: Record<
   SpaRebaseTimer,
   SpaCurrentIndex,
   SpaPrice,
+  WsspaPrice,
 };
 
 const tokenKeys = Object.keys(process.env).filter((key) =>

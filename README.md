@@ -25,3 +25,6 @@ Discord bots for [Spartacus](https://spartacus.finance/#/) and [Spartacadabra](h
 
 - **SPA Price**: Shows current SPA price  
   https://discord.com/api/oauth2/authorize?client_id=919729399677485107&permissions=0&scope=bot
+
+- **wsSPA Price**: Shows current wsSPA price
+  https://discord.com/api/oauth2/authorize?client_id=919749085697835089&permissions=0&scope=bot

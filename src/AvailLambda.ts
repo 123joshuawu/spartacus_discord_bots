@@ -5,13 +5,11 @@ import BentoBoxAbi from "../abi/bentoBox.json";
 
 export default abstract class AvailLambda extends Web3DiscordBot {
   protected bentoBox!: BentoBox;
-  protected readonly formatter: Intl.NumberFormat = new Intl.NumberFormat(
-    "en",
-    {
+  protected static readonly formatter: Intl.NumberFormat =
+    new Intl.NumberFormat("en", {
       notation: "compact",
       compactDisplay: "short",
-    }
-  );
+    });
 
   protected abstract readonly collateralAssetAddress: string;
   protected abstract readonly collateralAssetName: string;
@@ -36,7 +34,7 @@ export default abstract class AvailLambda extends Web3DiscordBot {
     this.log(`Lambda balance ${availableLambda}`);
 
     const displayString =
-      availableLambda < 5 ? "0" : this.formatter.format(availableLambda);
+      availableLambda < 5 ? "0" : AvailLambda.formatter.format(availableLambda);
 
     this.setNickName(displayString + " LAMBDA");
   }

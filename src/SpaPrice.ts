@@ -1,17 +1,12 @@
 import Web3DiscordBot from "./Web3DiscordBot";
 import axios from "axios";
 import config from "./config.json";
+import { createPercentFormatter, createUsdFormatter } from "./util";
 
 export default class SpaPrice extends Web3DiscordBot {
   public name: string = "SpaPrice";
-  private readonly usdFormatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-  private readonly percentFormatter = new Intl.NumberFormat("en-US", {
-    style: "percent",
-    maximumFractionDigits: 2,
-  });
+  private static readonly usdFormatter = createUsdFormatter();
+  private static readonly percentFormatter = createPercentFormatter();
 
   async init() {}
 
@@ -91,9 +86,9 @@ export default class SpaPrice extends Web3DiscordBot {
     const percentage = delta / parsedClose;
 
     this.setNickName(
-      `${this.usdFormatter.format(parsedClose)} (${this.percentFormatter.format(
-        percentage
-      )})`
+      `${SpaPrice.usdFormatter.format(
+        parsedClose
+      )} (${SpaPrice.percentFormatter.format(percentage)})`
     );
   }
 }
