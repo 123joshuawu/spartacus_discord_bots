@@ -37,5 +37,6 @@ export default abstract class AvailLambda extends Web3DiscordBot {
       availableLambda < 5 ? "0" : AvailLambda.formatter.format(availableLambda);
 
     this.setNickName(displayString + " LAMBDA");
+    this.setWatching(`Borrow - ${this.collateralAssetName}`);
   }
 }

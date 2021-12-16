@@ -90,5 +90,6 @@ export default class SpaPrice extends Web3DiscordBot {
         parsedClose
       )} (${SpaPrice.percentFormatter.format(percentage)})`
     );
+    this.setWatching("SPA Price");
   }
 }

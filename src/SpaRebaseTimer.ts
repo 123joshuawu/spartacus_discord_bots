@@ -62,5 +62,6 @@ export default class SpaRebaseTimer extends Web3DiscordBot {
     const displayString = prettified !== "" ? prettified : "Less than a minute";
 
     this.setNickName(displayString);
+    this.setWatching("Rebase Timer");
   }
 }

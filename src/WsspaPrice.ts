@@ -15,5 +15,6 @@ export default class WsspaPrice extends SpaCurrentIndex {
     const { close } = await getSpaPrice();
 
     this.setNickName(WsspaPrice.formatter.format(close * currentIndex));
+    this.setWatching("wsSPA Price");
   }
 }

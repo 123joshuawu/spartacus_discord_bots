@@ -40,5 +40,6 @@ export default class SpaCurrentIndex extends Web3DiscordBot {
     const currentIndex = await this.getCurrentIndex();
 
     this.setNickName(this.formatter.format(currentIndex));
+    this.setWatching("SPA Index");
   }
 }
